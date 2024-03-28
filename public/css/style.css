@@ -1,0 +1,364 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Ajustez selon vos besoins */
+}
+
+th {
+    text-align: center;
+    padding: 8px;
+    background-color: #f2f2f2; /* Couleur de fond du titre, ajustez selon vos besoins */
+}
+
+td {
+    text-align: center; /* Ajustez selon vos besoins */
+    padding: 8px;
+    border-bottom: 1px solid #ddd; /* Ligne de séparation entre les lignes, ajustez selon vos besoins */
+}
+
+/* Pour changer la couleur du fond en rouge au survol */
+#deconnexion:hover {
+    background-color: red !important; /* !important pour s'assurer que la couleur sera appliquée */
+}
+
+/* Pour étirer l'élément à la largeur maximale */
+#deconnexion{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Carte bancaire design*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f1f1;
+    font-family: "Lato", sans-serif;
+}
+
+
+h1 {
+    color: #1a2f42;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed grey;
+}
+h1 span {
+    display: block;
+}
+h1 span:nth-child(1) {
+    font-weight: normal;
+    color: #ed5d34;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 30px;
+    margin: 80px 0;
+    background: white;
+;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.0);
+
+
+}
+.card-wrapper {
+    position: relative;
+    min-height: 350px;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.86,0,0.07,1);
+    color: white;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+    /*background: url('/public/img/background.jpg') no-repeat center center;*/
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-number {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card-name,
+.card-expiry {
+    font-size: 16px;
+}
+
+
+.card-wrapper:nth-child(even) .card-front {
+    background-color: #1a2f42;
+}
+
+.card-front p {
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+.card-price  {
+    font-size: 45px;
+}
+
+.card-back {
+    background-color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card-wrapper:nth-child(even) .card-back {
+    background-color: #1a2f42;
+}
+
+.card-back a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    transition:
+            background-color 0.3s ease-out,
+            color 0.3s ease-out;
+}
+
+.card-wrapper:nth-child(odd) .card-back a:hover {
+    background-color: #1a2f42;
+    color: #fff;
+}
+.card-wrapper:nth-child(even) .card-back a:hover {
+    background-color: #ed5d34;
+    color: #fff;
+}
+
+.card-number {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+
+.arrow {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right:17px solid white;
+}
+
+.card-name, .card-expire {
+    position: absolute;
+    margin-top: 10px;
+
+    left: 10%;
+    font-family: sans-serif;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px black;
+}
+
+.card-name {
+    top: 74%;
+    font-size: 15px;
+}
+
+.card-expire {
+    top: 82%;
+    font-size: 1rem;
+}
+.card-cvv {
+    position: absolute;
+    text-align: right;
+    top: 30%;
+    width:100%;
+    color: white; /* Couleur du texte */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc transparent */
+    padding: 10px; /* Ajoutez du rembourrage pour un meilleur aspect */
+    border-radius: 5px; /* Pour arrondir les coins */
+}
+
+.cvv-label {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.cvv-number {
+    font-size: 20px;
+    color: white;
+}
+
+
+#carousel {
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    width: 80%;
+}
+
+/* Styles for About Section */
+#about {
+    background-color: #f9f9f9; /* Couleur de fond */
+    padding: 40px; /* Espacement intérieur */
+}
+
+#about .about {
+    text-align: center; /* Centrage du contenu */
+}
+
+#about .about h2 {
+    color: #333; /* Couleur du titre */
+    font-size: 24px; /* Taille de police du titre */
+    margin-bottom: 20px; /* Espacement en bas du titre */
+}
+
+#about .about p {
+    color: #666; /* Couleur du texte */
+    font-size: 16px; /* Taille de police du texte */
+    line-height: 1.6; /* Hauteur de ligne */
+}
+
+/* Styles for Packages */
+#packages {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#packages .card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Ajout d'un espacement entre les packs */
+}
+
+#packages .card {
+    background-color: #fff;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    transition: transform 0.3s ease; /* Effet de transition */
+    margin-bottom: 20px; /* Ajout d'un espace entre les cartes */
+    position: relative; /* Ajout pour positionner correctement l'effet de glace */
+}
+
+#packages .card:hover {
+    transform: translateY(-10px); /* Ajustement de la translation au survol */
+}
+
+#packages .card h3 {
+    color: #333;
+}
+
+#packages .card p {
+    color: #666;
+}
+
+#packages .blue {
+    border-top: 4px solid #007bff; /* Couleur bleue pour le pack standard */
+}
+
+#packages .silver {
+    border-top: 4px solid #c0c0c0; /* Couleur argent pour le pack premium */
+}
+
+#packages .gold {
+    border-top: 4px solid #ffd700; /* Couleur or pour le pack gold */
+}
+
+/* Styles for Ephemeral Cards and Accounts */
+#ephemeral-cards, #account {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#ephemeral-cards h2, #account h2 {
+    color: #333;
+}
+
+#ephemeral-cards p, #account p {
+    color: #666;
+}
+
+#account ul {
+    margin-left: 20px;
+}
